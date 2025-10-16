@@ -34,17 +34,18 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(60);
 });
 
-// CORS for frontend
+
+// ✅ Allow all origins, headers, and methods
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("https://hr-arvius-400422115038.us-east1.run.app")
+        policy.AllowAnyOrigin()
               .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials(); // For cookie auth
+              .AllowAnyMethod();
     });
 });
+
 
 // JWT Auth
 builder.Services.AddAuthentication(options =>
