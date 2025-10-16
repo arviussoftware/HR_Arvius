@@ -39,7 +39,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("https://hr-arvius-400422115038.us-east1.run.app")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials(); // For cookie auth
